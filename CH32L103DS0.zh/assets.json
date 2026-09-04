@@ -1,0 +1,380 @@
+{
+ "source_sha256": "7ee87a9b127bf6e95d8b037cade194cdfe28968041b21875e555239506734ecc",
+ "resolution": 150,
+ "assets": {
+  "p3-line-00008": {
+   "file": "assets/p3-line-00008.png",
+   "page": 3,
+   "bbox": [
+    70.4,
+    179.0,
+    505.48,
+    745.48
+   ],
+   "sha256": "9cc9345800e99578c8831cffaecdbced5f1b45cbb05dd83401338a7393cd7dbd"
+  },
+  "p4-line-00002": {
+   "file": "assets/p4-line-00002.png",
+   "page": 4,
+   "bbox": [
+    53.84,
+    75.2,
+    527.44,
+    693.4
+   ],
+   "sha256": "f8db524b2480aee2c382359ff939216c596d62fcc669e9d722f4c7a6ad3ebd68"
+  },
+  "p5-line-00003": {
+   "file": "assets/p5-line-00003.png",
+   "page": 5,
+   "bbox": [
+    63.08,
+    88.28,
+    512.44,
+    758.32
+   ],
+   "sha256": "c4b9120033ccf416a234ba38d8062ebfa7bae50474be7af8275f728f6dfba46a"
+  },
+  "p6-line-00007": {
+   "file": "assets/p6-line-00007.png",
+   "page": 6,
+   "bbox": [
+    53.48,
+    153.32,
+    527.68,
+    708.76
+   ],
+   "sha256": "bd48f2d36efd05be1939ca5ea2da352f570165927f3d400feab65bbd09264f42"
+  },
+  "p13-cluster-01": {
+   "file": "assets/p13-cluster-01.png",
+   "page": 13,
+   "bbox": [
+    123.32,
+    148.52,
+    456.22,
+    479.08
+   ],
+   "sha256": "5dcdec6617f1d380c79b114c2ad5eef38bc02ed18c3288fb66a431ab306ad6f5"
+  },
+  "p13-cluster-02": {
+   "file": "assets/p13-cluster-02.png",
+   "page": 13,
+   "bbox": [
+    165.44,
+    499.76,
+    412.96,
+    748.0
+   ],
+   "sha256": "ee82f331c84a95ab2177002a122cbceecc74f2923b5f99f1407c38c0215e2bf0"
+  },
+  "p14-cluster-01": {
+   "file": "assets/p14-cluster-01.png",
+   "page": 14,
+   "bbox": [
+    164.96,
+    322.16,
+    415.24,
+    572.08
+   ],
+   "sha256": "398277f44a33ab06f8b264e8fba0b045b3cdc0a16a4bc04b3d43963b9bc52c3b"
+  },
+  "p16-cluster-01": {
+   "file": "assets/p16-cluster-01.png",
+   "page": 16,
+   "bbox": [
+    51.2,
+    115.04,
+    529.6,
+    793.6
+   ],
+   "sha256": "55604551d53cde28496f413d216ea0dfb4b8115845780cb5bd26da810acfdb81"
+  },
+  "p17-cluster-01": {
+   "file": "assets/p17-cluster-01.png",
+   "page": 17,
+   "bbox": [
+    51.2,
+    52.64,
+    529.6,
+    793.6
+   ],
+   "sha256": "5e962e9700e74dc6618e32c3e673de75da42c1fc237f2e0e98be2bf16451101a"
+  },
+  "p18-cluster-01": {
+   "file": "assets/p18-cluster-01.png",
+   "page": 18,
+   "bbox": [
+    51.2,
+    52.64,
+    529.6,
+    793.6
+   ],
+   "sha256": "318a98858c9df598dc038a0577d456c2038e1635565f13cc681f2e5eac07a833"
+  },
+  "p19-cluster-01": {
+   "file": "assets/p19-cluster-01.png",
+   "page": 19,
+   "bbox": [
+    51.2,
+    52.64,
+    529.6,
+    793.6
+   ],
+   "sha256": "92b2464df5778acabbb604aa600e73ca5b23897a1b26f2aca76398852fbec154"
+  },
+  "p20-cluster-01": {
+   "file": "assets/p20-cluster-01.png",
+   "page": 20,
+   "bbox": [
+    53.48,
+    52.64,
+    527.44,
+    708.4
+   ],
+   "sha256": "405dd876b6af54ae7621e770cce4b5bfd1c00816e68035dd4b2bb1b8bfbd8597"
+  },
+  "p30-line-00013": {
+   "file": "assets/p30-line-00013.png",
+   "page": 30,
+   "bbox": [
+    176.12,
+    258.68,
+    409.24,
+    526.0
+   ],
+   "sha256": "5b8d2f5aa604ef88d6b47a1d46d5678b5d5ebfead70824e808af1dc86a8358d6"
+  },
+  "p31-line-00002": {
+   "file": "assets/p31-line-00002.png",
+   "page": 31,
+   "bbox": [
+    187.52,
+    82.52,
+    395.92,
+    365.56
+   ],
+   "sha256": "a9b9e61f47809058717bb983a71532b8eb450f52973f8cfbd57559fce57f55b9"
+  },
+  "p34-line-00002": {
+   "file": "assets/p34-line-00002.png",
+   "page": 34,
+   "bbox": [
+    198.08,
+    79.28,
+    379.36,
+    226.0
+   ],
+   "sha256": "887d9cb765f3714130814b9b397ab7ff67d808ab2286d7aba4939c78f035cee5"
+  },
+  "p34-line-00011": {
+   "file": "assets/p34-line-00011.png",
+   "page": 34,
+   "bbox": [
+    200.36,
+    268.76,
+    377.56,
+    431.44
+   ],
+   "sha256": "163b19a4ea18989e7c410a78461f8fad13dc387403460a1e88cd61234354e268"
+  },
+  "p39-line-00006": {
+   "file": "assets/p39-line-00006.png",
+   "page": 39,
+   "bbox": [
+    169.28,
+    151.88,
+    412.72,
+    282.4
+   ],
+   "sha256": "88a90338d00cf68570bc4b3ad170021e0702fa0813a671a9bfa76212fbc0609a"
+  },
+  "p39-line-00019": {
+   "file": "assets/p39-line-00019.png",
+   "page": 39,
+   "bbox": [
+    169.4,
+    455.36,
+    412.6,
+    585.76
+   ],
+   "sha256": "517af06034b2c52fbb2659e495cb61ba503d0a69fc6754b7d713478ba8040199"
+  },
+  "p40-line-00007": {
+   "file": "assets/p40-line-00007.png",
+   "page": 40,
+   "bbox": [
+    168.08,
+    172.53,
+    407.32,
+    289.96
+   ],
+   "sha256": "ed5da6621ec482d5ec895082e47334788a30c6251546c018b15865418a0c0fbf"
+  },
+  "p40-line-00027": {
+   "file": "assets/p40-line-00027.png",
+   "page": 40,
+   "bbox": [
+    165.2,
+    521.11,
+    410.2,
+    640.96
+   ],
+   "sha256": "439a67280c6ab113c03016ce0b06e246e846d0ab16b54e9e78ebcc5fb399c3ac"
+  },
+  "p43-line-00037": {
+   "file": "assets/p43-line-00037.png",
+   "page": 43,
+   "bbox": [
+    134.48,
+    561.92,
+    441.16,
+    725.68
+   ],
+   "sha256": "c4c5f3c48b7477b1405c7b7638e6007b6cf42f38c7f3c9f1a60471588ce87d47"
+  },
+  "p44-line-00038": {
+   "file": "assets/p44-line-00038.png",
+   "page": 44,
+   "bbox": [
+    53.36,
+    589.28,
+    520.0,
+    732.4
+   ],
+   "sha256": "9866ff63553f62c4e565c25915bc937f6199174a47afc5d78428257c7d8d84b6"
+  },
+  "p45-line-00018": {
+   "file": "assets/p45-line-00018.png",
+   "page": 45,
+   "bbox": [
+    59.48,
+    334.76,
+    520.0,
+    624.28
+   ],
+   "sha256": "2a8f27f3e9444f250d28ac3e330a29d237f47384759798780ac2a25855eac76f"
+  },
+  "p46-line-00002": {
+   "file": "assets/p46-line-00002.png",
+   "page": 46,
+   "bbox": [
+    53.72,
+    67.16,
+    527.08,
+    244.48
+   ],
+   "sha256": "de829b58431a0cccac8f9a93711e940f8399f91001f6088bd852ab5f30de7695"
+  },
+  "p46-line-00012": {
+   "file": "assets/p46-line-00012.png",
+   "page": 46,
+   "bbox": [
+    55.76,
+    265.64,
+    527.08,
+    505.24
+   ],
+   "sha256": "3b26d003addabf2097591a3e59c7c6f21c48125720ff80ab20d46a3f2502db3b"
+  },
+  "p46-line-00028": {
+   "file": "assets/p46-line-00028.png",
+   "page": 46,
+   "bbox": [
+    55.04,
+    526.28,
+    527.68,
+    701.32
+   ],
+   "sha256": "18531902a74f9cf321c2889e49e616c2fee7ff9550dfe2470f28d51c4cd1722a"
+  },
+  "p47-line-00002": {
+   "file": "assets/p47-line-00002.png",
+   "page": 47,
+   "bbox": [
+    46.52,
+    67.28,
+    543.16,
+    646.36
+   ],
+   "sha256": "f4e184bb358b049097088d61cc0806b260494127a2f629655d88c79c0bffb8ef"
+  },
+  "p49-line-00024": {
+   "file": "assets/p49-line-00024.png",
+   "page": 49,
+   "bbox": [
+    93.56,
+    498.08,
+    469.72,
+    630.52
+   ],
+   "sha256": "a18813231ad946299cd5bbed8c7fe419b512ee514b849080356e220113b7a801"
+  },
+  "p50-line-00002": {
+   "file": "assets/p50-line-00002.png",
+   "page": 50,
+   "bbox": [
+    196.4,
+    73.16,
+    379.36,
+    196.24
+   ],
+   "sha256": "f181543faee30386503c1654a1b16492136dd0f5c46acd87792dbf4e9950f61a"
+  },
+  "p55-draw-image-00002": {
+   "file": "assets/p55-draw-image-00002.png",
+   "page": 55,
+   "bbox": [
+    110.96,
+    121.88,
+    464.32,
+    412.48
+   ],
+   "sha256": "542fcddf69dabfb0f06ee2e15b53a55e7b91debea4237a7f67de44d8611938fe"
+  },
+  "p55-draw-image-00003": {
+   "file": "assets/p55-draw-image-00003.png",
+   "page": 55,
+   "bbox": [
+    92.48,
+    446.84,
+    482.68,
+    742.84
+   ],
+   "sha256": "8fadcc07638125cf0407c6880399e29287fff8741a52e945003dd25ba6642d7f"
+  },
+  "p56-draw-image-00002": {
+   "file": "assets/p56-draw-image-00002.png",
+   "page": 56,
+   "bbox": [
+    133.04,
+    73.88,
+    442.24,
+    460.6
+   ],
+   "sha256": "493075c5a8eaa4067892c9d2f6999afe8a3935639f9c6655d94fbc4c3c62fe8b"
+  },
+  "p56-draw-image-00003": {
+   "file": "assets/p56-draw-image-00003.png",
+   "page": 56,
+   "bbox": [
+    117.92,
+    491.36,
+    457.36,
+    760.72
+   ],
+   "sha256": "cb4622896a55144bf4d88d0bfc5e1453d20b467f5af8ce4af8871cff17132a25"
+  },
+  "p57-draw-image-00002": {
+   "file": "assets/p57-draw-image-00002.png",
+   "page": 57,
+   "bbox": [
+    76.64,
+    73.64,
+    498.52,
+    476.44
+   ],
+   "sha256": "82a2ebe5d80cb3c3ccd9f1580bec699396177d7917f6f328c19d8499f9073a7c"
+  }
+ }
+}

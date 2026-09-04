@@ -1,0 +1,88 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF × rendering — side-by-side viewer</title>
+<style>
+  body { margin: 0; font: 14px system-ui, sans-serif; }
+  header { display: flex; gap: .5em; align-items: center; padding: 6px 8px;
+           background: #222; color: #eee; flex-wrap: wrap; }
+  header select, header input, header button { font: inherit; }
+  #page { width: 5em; }
+  main { display: flex; height: calc(100vh - 44px); }
+  main > * { border: 0; flex: 1 1 50%; height: 100%; }
+  #pdfpane { display: flex; }
+  #pdfpane iframe { border: 0; flex: 1 1 100%; height: 100%; }
+  a { color: #9cf; }
+</style>
+<header>
+  <select id="doc"></select>
+  <button id="prev" title="PageUp / ←">◀</button>
+  <input id="page" type="number" min="1" value="1">
+  <span>/ <span id="total">?</span></span>
+  <button id="next" title="PageDown / →">▶</button>
+  <label><input type="checkbox" id="swap"> swap</label>
+  <a id="mdlink" href="#" target="_blank">open page</a>
+  <a href="./">index</a>
+</header>
+<main id="panes">
+  <div id="pdfpane" title="original PDF"></div>
+  <iframe id="md" title="structured rendering"></iframe>
+</main>
+<script>
+const DOCS = [{"name": "CH32FV2x_V3xRM.zh", "pages": 553, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_zh/CH32FV2x_V3xRM.PDF"}, {"name": "CH32FV2x_V3xRM.en", "pages": 627, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_en/CH32FV2x_V3xRM.PDF"}, {"name": "CH32H417DS0.zh", "pages": 130, "pdf": "https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417DS0.PDF"}, {"name": "CH32H417DS0.en", "pages": 148, "pdf": "https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417DS0.PDF"}, {"name": "CH32H417RM.zh", "pages": 879, "pdf": "https://ch32-riscv-ug.github.io/CH32H417/datasheet_zh/CH32H417RM.PDF"}, {"name": "CH32H417RM.en", "pages": 1042, "pdf": "https://ch32-riscv-ug.github.io/CH32H417/datasheet_en/CH32H417RM.PDF"}, {"name": "CH32L103DS0.zh", "pages": 58, "pdf": "https://ch32-riscv-ug.github.io/CH32L103/datasheet_zh/CH32L103DS0.PDF"}, {"name": "CH32L103DS0.en", "pages": 70, "pdf": "https://ch32-riscv-ug.github.io/CH32L103/datasheet_en/CH32L103DS0.PDF"}, {"name": "CH32L103RM.zh", "pages": 313, "pdf": "https://ch32-riscv-ug.github.io/CH32L103/datasheet_zh/CH32L103RM.PDF"}, {"name": "CH32L103RM.en", "pages": 370, "pdf": "https://ch32-riscv-ug.github.io/CH32L103/datasheet_en/CH32L103RM.PDF"}, {"name": "CH32M030DS0.zh", "pages": 47, "pdf": "https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS0.PDF"}, {"name": "CH32M030DS0.en", "pages": 57, "pdf": "https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030DS0.PDF"}, {"name": "CH32M030DS2.zh", "pages": 12, "pdf": "https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030DS2.PDF"}, {"name": "CH32M030RM.zh", "pages": 251, "pdf": "https://ch32-riscv-ug.github.io/CH32M030/datasheet_zh/CH32M030RM.PDF"}, {"name": "CH32M030RM.en", "pages": 274, "pdf": "https://ch32-riscv-ug.github.io/CH32M030/datasheet_en/CH32M030RM.PDF"}, {"name": "CH32V002DS0.zh", "pages": 35, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V002DS0.PDF"}, {"name": "CH32V002DS0.en", "pages": 47, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_en/CH32V002DS0.PDF"}, {"name": "CH32V003DS0.zh", "pages": 31, "pdf": "https://ch32-riscv-ug.github.io/CH32V003/datasheet_zh/CH32V003DS0.PDF"}, {"name": "CH32V003DS0.en", "pages": 37, "pdf": "https://ch32-riscv-ug.github.io/CH32V003/datasheet_en/CH32V003DS0.PDF"}, {"name": "CH32V003RM.zh", "pages": 194, "pdf": "https://ch32-riscv-ug.github.io/CH32V003/datasheet_zh/CH32V003RM.PDF"}, {"name": "CH32V003RM.en", "pages": 188, "pdf": "https://ch32-riscv-ug.github.io/CH32V003/datasheet_en/CH32V003RM.PDF"}, {"name": "CH32V004DS0.zh", "pages": 32, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V004DS0.PDF"}, {"name": "CH32V004DS0.en", "pages": 39, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_en/CH32V004DS0.PDF"}, {"name": "CH32V006DS0.zh", "pages": 44, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V006DS0.PDF"}, {"name": "CH32V006DS0.en", "pages": 62, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_en/CH32V006DS0.PDF"}, {"name": "CH32V006DS2.zh", "pages": 35, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V006DS2.PDF"}, {"name": "CH32V007DS0.zh", "pages": 50, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V007DS0.PDF"}, {"name": "CH32V007DS0.en", "pages": 73, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_en/CH32V007DS0.PDF"}, {"name": "CH32V00XRM.zh", "pages": 229, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_zh/CH32V00XRM.PDF"}, {"name": "CH32V00XRM.en", "pages": 269, "pdf": "https://ch32-riscv-ug.github.io/CH32V006/datasheet_en/CH32V00XRM.PDF"}, {"name": "CH32V103DS0.zh", "pages": 36, "pdf": "https://ch32-riscv-ug.github.io/CH32V103/datasheet_zh/CH32V103DS0.PDF"}, {"name": "CH32V103DS0.en", "pages": 41, "pdf": "https://ch32-riscv-ug.github.io/CH32V103/datasheet_en/CH32V103DS0.PDF"}, {"name": "CH32V203DS0.zh", "pages": 56, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_zh/CH32V203DS0.PDF"}, {"name": "CH32V203DS0.en", "pages": 66, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_en/CH32V203DS0.PDF"}, {"name": "CH32V205DS0.zh", "pages": 68, "pdf": "https://ch32-riscv-ug.github.io/CH32V205/datasheet_zh/CH32V205DS0.PDF"}, {"name": "CH32V205DS0.en", "pages": 79, "pdf": "https://ch32-riscv-ug.github.io/CH32V205/datasheet_en/CH32V205DS0.PDF"}, {"name": "CH32V205RM.zh", "pages": 389, "pdf": "https://ch32-riscv-ug.github.io/CH32V205/datasheet_zh/CH32V205RM.PDF"}, {"name": "CH32V205RM.en", "pages": 461, "pdf": "https://ch32-riscv-ug.github.io/CH32V205/datasheet_en/CH32V205RM.PDF"}, {"name": "CH32V208DS0.zh", "pages": 42, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_zh/CH32V208DS0.PDF"}, {"name": "CH32V208DS0.en", "pages": 49, "pdf": "https://ch32-riscv-ug.github.io/CH32V20x/datasheet_en/CH32V208DS0.PDF"}, {"name": "CH32V20x_30xDS0.zh", "pages": 87, "pdf": "https://ch32-riscv-ug.github.io/CH32V307/datasheet_zh/CH32V20x_30xDS0.PDF"}, {"name": "CH32V20x_30xDS0.en", "pages": 99, "pdf": "https://ch32-riscv-ug.github.io/CH32V307/datasheet_en/CH32V20x_30xDS0.PDF"}, {"name": "CH32V407DS0.zh", "pages": 74, "pdf": "https://ch32-riscv-ug.github.io/CH32V407/datasheet_zh/CH32V407DS0.PDF"}, {"name": "CH32V407DS0.en", "pages": 84, "pdf": "https://ch32-riscv-ug.github.io/CH32V407/datasheet_en/CH32V407DS0.PDF"}, {"name": "CH32V407RM.zh", "pages": 538, "pdf": "https://ch32-riscv-ug.github.io/CH32V407/datasheet_zh/CH32V407RM.PDF"}, {"name": "CH32V407RM.en", "pages": 609, "pdf": "https://ch32-riscv-ug.github.io/CH32V407/datasheet_en/CH32V407RM.PDF"}, {"name": "CH32X035DS0.zh", "pages": 41, "pdf": "https://ch32-riscv-ug.github.io/CH32X035/datasheet_zh/CH32X035DS0.PDF"}, {"name": "CH32X035DS0.en", "pages": 47, "pdf": "https://ch32-riscv-ug.github.io/CH32X035/datasheet_en/CH32X035DS0.PDF"}, {"name": "CH32X035RM.zh", "pages": 246, "pdf": "https://ch32-riscv-ug.github.io/CH32X035/datasheet_zh/CH32X035RM.PDF"}, {"name": "CH32X035RM.en", "pages": 261, "pdf": "https://ch32-riscv-ug.github.io/CH32X035/datasheet_en/CH32X035RM.PDF"}, {"name": "CH32X315DS0.zh", "pages": 47, "pdf": "https://ch32-riscv-ug.github.io/CH32X315/datasheet_zh/CH32X315DS0.PDF"}, {"name": "CH32X315DS0.en", "pages": 55, "pdf": "https://ch32-riscv-ug.github.io/CH32X315/datasheet_en/CH32X315DS0.PDF"}, {"name": "CH32X315RM.zh", "pages": 310, "pdf": "https://ch32-riscv-ug.github.io/CH32X315/datasheet_zh/CH32X315RM.PDF"}, {"name": "CH32X315RM.en", "pages": 365, "pdf": "https://ch32-riscv-ug.github.io/CH32X315/datasheet_en/CH32X315RM.PDF"}, {"name": "CH32xRM.zh", "pages": 286, "pdf": "https://ch32-riscv-ug.github.io/CH32V103/datasheet_zh/CH32xRM.PDF"}, {"name": "CH32xRM.en", "pages": 341, "pdf": "https://ch32-riscv-ug.github.io/CH32V103/datasheet_en/CH32xRM.PDF"}, {"name": "PACKAGE.zh", "pages": 117, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/PACKAGE.PDF"}, {"name": "PACKAGE.en", "pages": 119, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/PACKAGE.PDF"}, {"name": "QingKeV2_Processor_Manual.zh", "pages": 27, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/QingKeV2_Processor_Manual.PDF"}, {"name": "QingKeV2_Processor_Manual.en", "pages": 32, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/QingKeV2_Processor_Manual.PDF"}, {"name": "QingKeV3_Processor_Manual.zh", "pages": 56, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/QingKeV3_Processor_Manual.PDF"}, {"name": "QingKeV3_Processor_Manual.en", "pages": 66, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/QingKeV3_Processor_Manual.PDF"}, {"name": "QingKeV4_Processor_Manual.zh", "pages": 37, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/QingKeV4_Processor_Manual.PDF"}, {"name": "QingKeV4_Processor_Manual.en", "pages": 44, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/QingKeV4_Processor_Manual.PDF"}, {"name": "QingKeV5_Processor_Manual.zh", "pages": 47, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/QingKeV5_Processor_Manual.PDF"}, {"name": "QingKeV5_Processor_Manual.en", "pages": 55, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/QingKeV5_Processor_Manual.PDF"}, {"name": "WCH-LinkUserManual.zh", "pages": 24, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_zh/WCH-LinkUserManual.PDF"}, {"name": "WCH-LinkUserManual.en", "pages": 29, "pdf": "https://ch32-riscv-ug.github.io/WCH-common/datasheet_en/WCH-LinkUserManual.PDF"}];
+const sel = document.getElementById("doc");
+const pageBox = document.getElementById("page");
+const total = document.getElementById("total");
+const pdfpane = document.getElementById("pdfpane");
+const md = document.getElementById("md");
+const mdlink = document.getElementById("mdlink");
+for (const d of DOCS) {
+  const o = document.createElement("option");
+  o.value = d.name; o.textContent = d.name + " (" + d.pages + "p)";
+  sel.appendChild(o);
+}
+function state() {
+  const d = DOCS[sel.selectedIndex];
+  const p = Math.min(Math.max(1, pageBox.valueAsNumber || 1), d.pages);
+  return { d, p };
+}
+function update(pushHash = true) {
+  const { d, p } = state();
+  pageBox.value = p; pageBox.max = d.pages; total.textContent = d.pages;
+  const mdUrl = d.name + "/pages/" + String(p).padStart(4, "0") + ".html";
+  md.src = mdUrl; mdlink.href = mdUrl;
+  // 内蔵PDF viewerはfragmentだけの変更では動かず、about:blankトグルは
+  // ナビゲーションが競合してページの偶奇で交互に失敗する。iframe要素を
+  // 毎回作り直せば必ず新規ナビゲーションになる。
+  const frame = document.createElement("iframe");
+  frame.title = "original PDF";
+  frame.src = d.pdf + "#page=" + p;
+  pdfpane.replaceChildren(frame);
+  if (pushHash)
+    history.replaceState(null, "", "#doc=" + encodeURIComponent(d.name) + "&p=" + p);
+}
+function move(delta) {
+  pageBox.value = (pageBox.valueAsNumber || 1) + delta;
+  update();
+}
+sel.addEventListener("change", () => { pageBox.value = 1; update(); });
+pageBox.addEventListener("change", () => update());
+document.getElementById("prev").addEventListener("click", () => move(-1));
+document.getElementById("next").addEventListener("click", () => move(1));
+document.getElementById("swap").addEventListener("change", (e) => {
+  document.getElementById("panes").style.flexDirection =
+    e.target.checked ? "row-reverse" : "row";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+  if (e.key === "ArrowLeft" || e.key === "PageUp") { move(-1); e.preventDefault(); }
+  if (e.key === "ArrowRight" || e.key === "PageDown") { move(1); e.preventDefault(); }
+});
+const hash = new URLSearchParams(location.hash.slice(1));
+const wanted = hash.get("doc");
+if (wanted) {
+  const at = DOCS.findIndex((d) => d.name === wanted);
+  if (at >= 0) { sel.selectedIndex = at; pageBox.value = +(hash.get("p") || 1); }
+}
+update(false);
+</script>

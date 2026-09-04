@@ -1,0 +1,292 @@
+{
+ "source_sha256": "51d2a9f352d2275e52443df131061ec550d674b965722a948f1e6e3393ae93e1",
+ "resolution": 150,
+ "assets": {
+  "p3-line-00009": {
+   "file": "assets/p3-line-00009.png",
+   "page": 3,
+   "bbox": [
+    70.52,
+    191.24,
+    535.24,
+    718.12
+   ],
+   "sha256": "792476abb257771dd61decc7ca2b87d962dcabffa4701c2790c19756566808e8"
+  },
+  "p4-line-00003": {
+   "file": "assets/p4-line-00003.png",
+   "page": 4,
+   "bbox": [
+    64.4,
+    85.04,
+    542.8,
+    621.04
+   ],
+   "sha256": "554963857b1b4dcbde34dbda8e1ee425f6bee789e057ae8aab781a838fb3ac52"
+  },
+  "p5-line-00009": {
+   "file": "assets/p5-line-00009.png",
+   "page": 5,
+   "bbox": [
+    68.36,
+    184.4,
+    542.2,
+    568.36
+   ],
+   "sha256": "a8198ba846a6146a93f14bcb9c005604f26734c9351f66e654f0baaa87e4a204"
+  },
+  "p11-draw-image-00002": {
+   "file": "assets/p11-draw-image-00002.png",
+   "page": 11,
+   "bbox": [
+    135.44,
+    121.16,
+    445.84,
+    413.8
+   ],
+   "sha256": "0a76ba5feb161be4316620617608144d1a6fdcae9797f16f60b3359bef3c95e7"
+  },
+  "p11-draw-image-00003": {
+   "file": "assets/p11-draw-image-00003.png",
+   "page": 11,
+   "bbox": [
+    130.64,
+    442.4,
+    447.88,
+    747.04
+   ],
+   "sha256": "83aad2e7317409918981cd9cf493a02cb3cb8ade8fce26515fcfb416aa52e565"
+  },
+  "p12-cluster-01": {
+   "file": "assets/p12-cluster-01.png",
+   "page": 12,
+   "bbox": [
+    32.96,
+    115.04,
+    547.96,
+    793.6
+   ],
+   "sha256": "8e0efa9557b22cb753a072508beec51254f18421da4964cfd6f57d332c944425"
+  },
+  "p13-cluster-01": {
+   "file": "assets/p13-cluster-01.png",
+   "page": 13,
+   "bbox": [
+    32.96,
+    52.64,
+    547.96,
+    793.6
+   ],
+   "sha256": "a0187e4e6bd4c0694656854bc75dd8a875e99065d18e76284e59e948e09d6a59"
+  },
+  "p14-cluster-01": {
+   "file": "assets/p14-cluster-01.png",
+   "page": 14,
+   "bbox": [
+    29.96,
+    311.6,
+    550.84,
+    761.8
+   ],
+   "sha256": "33c1680609355cff35f9b782bf9e52dcaeddf3efd67184d79c41d79beee893ab"
+  },
+  "p15-cluster-01": {
+   "file": "assets/p15-cluster-01.png",
+   "page": 15,
+   "bbox": [
+    29.96,
+    52.64,
+    550.84,
+    793.6
+   ],
+   "sha256": "5446efd601862dce0de9df795ead650ccaf8123dac107f96b319a617c61270e2"
+  },
+  "p16-cluster-01": {
+   "file": "assets/p16-cluster-01.png",
+   "page": 16,
+   "bbox": [
+    29.96,
+    52.64,
+    550.84,
+    261.4
+   ],
+   "sha256": "b865dc30e469469ea84368eb2e5ee31fae862c5e4d3d6443e8da80dc8ec8891b"
+  },
+  "p19-line-00011": {
+   "file": "assets/p19-line-00011.png",
+   "page": 19,
+   "bbox": [
+    190.04,
+    231.44,
+    385.12,
+    474.64
+   ],
+   "sha256": "56115681f0c9c27d592b2755fd5598fa38fc6d74cb427bcc4c70de0cd3fbff9e"
+  },
+  "p21-line-00017": {
+   "file": "assets/p21-line-00017.png",
+   "page": 21,
+   "bbox": [
+    222.32,
+    354.68,
+    353.2,
+    501.4
+   ],
+   "sha256": "08e268c60ed66369d7fba21b267aa2f2178833b7df48c6ca6a647d98b23044ff"
+  },
+  "p23-line-00025": {
+   "file": "assets/p23-line-00025.png",
+   "page": 23,
+   "bbox": [
+    190.64,
+    438.8,
+    384.64,
+    524.44
+   ],
+   "sha256": "f95f28361291921cbed8c064b58c7e83d1de7d4c46f1d76e5a7448f6658308ba"
+  },
+  "p23-line-00036": {
+   "file": "assets/p23-line-00036.png",
+   "page": 23,
+   "bbox": [
+    191.12,
+    679.28,
+    384.16,
+    764.92
+   ],
+   "sha256": "9104437bbb80ea86aa98ff7e3344521a4dee56dcfba766594c41dba21d707aeb"
+  },
+  "p24-line-00011": {
+   "file": "assets/p24-line-00011.png",
+   "page": 24,
+   "bbox": [
+    194.72,
+    232.76,
+    380.56,
+    312.0
+   ],
+   "sha256": "dffb821fcef2a08966cb2d4dfe4053930af80aef35406357cb2ca1eda2ae3051"
+  },
+  "p24-line-00027": {
+   "file": "assets/p24-line-00027.png",
+   "page": 24,
+   "bbox": [
+    193.52,
+    503.48,
+    381.76,
+    582.31
+   ],
+   "sha256": "2a092f18e1fc603deb482c34d60e1a9ad1ca4c56a5fc22b947f43c5b33661362"
+  },
+  "p27-line-00033": {
+   "file": "assets/p27-line-00033.png",
+   "page": 27,
+   "bbox": [
+    153.08,
+    523.16,
+    421.72,
+    634.6
+   ],
+   "sha256": "9f7a7b7e5067daccf2a89c7f3fcc0add947b20eb3a68f141b9c00c8c50626052"
+  },
+  "p28-line-00011": {
+   "file": "assets/p28-line-00011.png",
+   "page": 28,
+   "bbox": [
+    53.36,
+    199.4,
+    520.0,
+    342.52
+   ],
+   "sha256": "8c437ae902af7238ce518919ab9d110aa3fdffe2f100dce80ba4f9fcdf9ac49b"
+  },
+  "p29-line-00003": {
+   "file": "assets/p29-line-00003.png",
+   "page": 29,
+   "bbox": [
+    59.48,
+    90.8,
+    520.0,
+    380.32
+   ],
+   "sha256": "787b44c14ed80d98f29de92e824eaaae72dbc1d0bd1e3eaa3868627f41f64eeb"
+  },
+  "p29-line-00023": {
+   "file": "assets/p29-line-00023.png",
+   "page": 29,
+   "bbox": [
+    58.28,
+    408.8,
+    525.04,
+    645.52
+   ],
+   "sha256": "1c8a169e7b13c5ecc4a93761dfc01774168fa0ab4d937aeb963d5129af919252"
+  },
+  "p30-line-00002": {
+   "file": "assets/p30-line-00002.png",
+   "page": 30,
+   "bbox": [
+    58.28,
+    67.64,
+    525.04,
+    304.36
+   ],
+   "sha256": "20722258ca37cfb56108e8399a68b54effd9052079a0e6251f655116d2c8cf1e"
+  },
+  "p32-line-00005": {
+   "file": "assets/p32-line-00005.png",
+   "page": 32,
+   "bbox": [
+    162.68,
+    134.6,
+    412.24,
+    228.4
+   ],
+   "sha256": "d443f8dada54bffca20df07cdc43c7db917d2513b1e4bf1a251fad1e00c0fe8b"
+  },
+  "p32-line-00006": {
+   "file": "assets/p32-line-00006.png",
+   "page": 32,
+   "bbox": [
+    216.56,
+    261.56,
+    358.48,
+    351.04
+   ],
+   "sha256": "fb3b73027908bc4f1ef7946a3a474acb4615d4b95d31db9914be74e7f883cd49"
+  },
+  "p34-line-00004": {
+   "file": "assets/p34-line-00004.png",
+   "page": 34,
+   "bbox": [
+    130.28,
+    104.96,
+    444.88,
+    335.92
+   ],
+   "sha256": "244f9e8e17708d19e31635cf91384ae81ad93bff9291f2192ffc73a70ddc13d0"
+  },
+  "p34-line-00005": {
+   "file": "assets/p34-line-00005.png",
+   "page": 34,
+   "bbox": [
+    144.92,
+    368.12,
+    430.24,
+    587.56
+   ],
+   "sha256": "0a5309755a231b1bceac937960ec4ff44814fd64321d6be2262153c7c3c28cef"
+  },
+  "p35-line-00002": {
+   "file": "assets/p35-line-00002.png",
+   "page": 35,
+   "bbox": [
+    132.2,
+    70.28,
+    443.08,
+    308.08
+   ],
+   "sha256": "7cba9ac68353f08d760e25b94b96ed400f2cbc4dbfa4f95cc631aeb881e549d7"
+  }
+ }
+}

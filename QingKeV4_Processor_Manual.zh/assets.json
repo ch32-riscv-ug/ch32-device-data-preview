@@ -1,0 +1,39 @@
+{
+ "source_sha256": "b543a875a199a67091193afc16e0f7c4ec365df3b8d35bf93b4cc6546e362591",
+ "resolution": 150,
+ "assets": {
+  "p6-line-00010": {
+   "file": "assets/p6-line-00010.png",
+   "page": 6,
+   "bbox": [
+    65.48,
+    205.4,
+    536.08,
+    341.56
+   ],
+   "sha256": "ef5356b2652e647b48fb119568ed55a06339529890b42184dfb0ab87d869998e"
+  },
+  "p15-line-00033": {
+   "file": "assets/p15-line-00033.png",
+   "page": 16,
+   "bbox": [
+    65.48,
+    100.77,
+    515.85,
+    292.48
+   ],
+   "sha256": "8b7c39a5c044ff1e361e7ef985c3c8a7381a4367f57e1b6830d64fe3bc604cd8"
+  },
+  "p16-line-00032": {
+   "file": "assets/p16-line-00032.png",
+   "page": 16,
+   "bbox": [
+    115.4,
+    528.44,
+    473.92,
+    639.76
+   ],
+   "sha256": "8511162129406e7a8b8c5ce2316e7e7618a36dc3b13f05eeccf45347a4468c99"
+  }
+ }
+}
